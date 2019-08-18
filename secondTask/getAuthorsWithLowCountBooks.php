@@ -14,6 +14,8 @@ while ($row = $result->fetch_assoc()) {
     $response[] = $row;
 }
 
+/*Второй запрос ищет авторов, которых нет в связующей таблице
+то есть которые не написали книг*/
 $secondQuery = "SELECT (firstname), (lastname) FROM authors LEFT JOIN book_author ON (book_author.authors_id=authors.id) WHERE book_author.authors_id IS NULL";
 $secondResult = $connection->query($secondQuery);
 
