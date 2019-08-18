@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru-ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Тестовое задание</title>
+        <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="/js/functions.js"></script>
+    </head>
+    <body class="container h-100 border-left border-right px-0 bg-light">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/firstTask.html">Первое задание</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/secondTask.html">Второе задание</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/thirdTask.html">Третье задание</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="row w-100 justify-content-center align-items-center bg-white mx-auto">
+            <div class="col-md-6 col-lg-6 col-sm-6">
+                <h2>Автор:</h2>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6">
+                <h2>Книга:</h2>
+            </div>
+        </div>
+        <div class="row w-100 justify-content-center align-items-center  bg-white mx-auto">
+            <div class="col-md-6 col-lg-6 col-sm-6">
+                <div class="form-group">
+                    <label>Имя</label>
+                    <input type='text' id='firstname' placeholder='Имя' class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Фамилия</label>
+                    <input type='text' id='lastname' placeholder='Фамилия' class="form-control">
+                </div>
+                <button type='submit' onClick='addAuthor()' class="btn btn-primary">Добавить запись</button>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6">
+                <div class="form-group">
+                    <label>Название</label>
+                    <input type='text' id='title' placeholder='Название' class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Число авторов</label>
+                    <input type='text' id='authorsCount' placeholder='Число авторов' class="form-control">
+                    <br>
+                    <button type='submit' onClick='setAuthors()' class="btn btn-primary">Добавить авторов</button>
+                </div>
+                <div class="form-group">
+                    <label id="authors">Автор</label>
+                </div>
+                <button type='submit' onClick='addBooks()' class="btn btn-primary">Добавить запись</button>
+            </div>
+        </div>
+        <div class="bg-white">
+            <h2 class="px-2">Авторы у которых не более 6 книг</h2>
+            <button type='submit' onClick='getAuthorsWithLowCountBooks()' class="btn btn-primary ml-2 my-2">Запрос</button>
+            <button type='submit' onClick='cleanTable("tbody#content")' class="btn btn-primary ml-2 my-2">Очистить</button>
+            <table class="table border-bottom bg-white mb-0">
+                <thead  class="thead-light">
+                    <th scope="col" id="firstname">Имя</th>
+                    <th scope="col" id="lastname">Фамилия</th>
+                    <th scope="col" id="count">Число книг</th>
+                </thead>
+                <tbody id="content">
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
